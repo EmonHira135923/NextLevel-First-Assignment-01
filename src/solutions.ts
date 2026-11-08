@@ -49,6 +49,30 @@ const getPopularCourses = (course: Course[], student: number): Course[] => {
 };
 
 
+interface User {
+  id: number;
+  name: string;
+  role: string;
+}
+
+const users: User[] = [
+  { id: 1, name: "Rakib", role: "Admin" },
+  { id: 2, name: "Sadia", role: "Editor" },
+  { id: 3, name: "Tariq", role: "Subscriber" },
+];
+
+const pluckValues = <T,K extends keyof T>(
+    items:T[],
+    key:K
+):T[K][] => {
+    let newArray:T[K][] = [];
+    for(let i=0;i<items.length;i++){
+        newArray.push(items[i][key]);
+    }
+    return newArray;
+}
+
+
 class Employee{
     constructor(protected name:string,private baseSalary:number){}
     getDetails():string{
