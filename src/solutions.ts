@@ -37,3 +37,16 @@ console.log("First Check", FirstString);
 console.log("Second Check", secondNumber);
 console.log("Third Check", thirdtrue);
 console.log("Fourth Check", fourthfalse);
+
+
+type Coordinatetype = readonly [number,number,string];
+
+const formatCoordinate = (a:Coordinatetype) : string => {
+ return `Location: ${a[2]} (${a[0]}, ${a[1]})`;   
+}
+
+const f = formatCoordinate([23.81, 90.41, "Dhaka"]);
+const g = formatCoordinate([22.35, 91.78, "Chittagong"]);
+
+console.log(f);
+console.log(g);
