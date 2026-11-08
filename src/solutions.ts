@@ -23,13 +23,28 @@ const formatCoordinate = (a:Coordinatetype) : string => {
 
 const concatenateArrays = <T>(...arrays:T[][]) :T[] => {
     let newArray:T[] = [];
-    let i:number;
-    let j:number;
-    for(i=0;i<arrays.length;i++){
-        for(j=0;j<arrays[i].length;j++){
+    for(let i=0;i<arrays.length;i++){
+        for(let j=0;j<arrays[i].length;j++){
             newArray.push(arrays[i][j]) ;
         }
     }
     return newArray;
 }
+
+interface Course {
+  title: string;
+  students: number;
+  isPublished: boolean;
+}
+
+
+const getPopularCourses = (course: Course[], student: number): Course[] => {
+  let newArray: Course[] = [];
+  for (let i = 0; i < course.length; i++) {
+    if (course[i].isPublished == true && course[i].students >= student) {
+      newArray.push(course[i]);
+    }
+  }
+  return newArray;
+};
 
