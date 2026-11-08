@@ -1,21 +1,8 @@
-const multiplyValue = (a:number,b?:number) => {
+const multiplyValue = (a:number,b?:number) :number => {
     if(typeof(b)==="number") return a*b;
     else if(typeof(b)==="undefined") return a*2;
     else return 0;
 }
-
-
-const first = multiplyValue(10);
-const second = multiplyValue(10,5);
-const third = multiplyValue(7,0);
-const fourth = multiplyValue(0,10);
-
-
-console.log("First Ans: ",first);
-console.log("Second Ans: ",second);
-console.log("Third Ans: ",third);
-console.log("Forth Ans: ",fourth);
-
 
 type processInputType = string | number | boolean;
 
@@ -28,25 +15,21 @@ const processInput = (a:processInputType):processInputType => {
   }
 };
 
-const FirstString = processInput("  Emon  ");
-const secondNumber = processInput(8);
-const thirdtrue = processInput(true);
-const fourthfalse = processInput(false);
-
-console.log("First Check", FirstString);
-console.log("Second Check", secondNumber);
-console.log("Third Check", thirdtrue);
-console.log("Fourth Check", fourthfalse);
-
-
 type Coordinatetype = readonly [number,number,string];
 
 const formatCoordinate = (a:Coordinatetype) : string => {
- return `Location: ${a[2]} (${a[0]}, ${a[1]})`;   
+ return `Location: ${a[2].trim()} (${a[0]}, ${a[1]})`;   
 }
 
-const f = formatCoordinate([23.81, 90.41, "Dhaka"]);
-const g = formatCoordinate([22.35, 91.78, "Chittagong"]);
+const concatenateArrays = <T>(...arrays:T[][]) :T[] => {
+    let newArray:T[] = [];
+    let i:number;
+    let j:number;
+    for(i=0;i<arrays.length;i++){
+        for(j=0;j<arrays[i].length;j++){
+            newArray.push(arrays[i][j]) ;
+        }
+    }
+    return newArray;
+}
 
-console.log(f);
-console.log(g);
