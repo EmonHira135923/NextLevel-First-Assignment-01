@@ -15,3 +15,25 @@ console.log("First Ans: ",first);
 console.log("Second Ans: ",second);
 console.log("Third Ans: ",third);
 console.log("Forth Ans: ",fourth);
+
+
+type processInputType = string | number | boolean;
+
+const processInput = (a:processInputType):processInputType => {
+  if (typeof a === "string") return a.trim().toLowerCase();
+  else if (typeof a === "number") return a * 10;
+  else {
+    if (a == true) return "Active";
+    else return "Inactive";
+  }
+};
+
+const FirstString = processInput("  Emon  ");
+const secondNumber = processInput(8);
+const thirdtrue = processInput(true);
+const fourthfalse = processInput(false);
+
+console.log("First Check", FirstString);
+console.log("Second Check", secondNumber);
+console.log("Third Check", thirdtrue);
+console.log("Fourth Check", fourthfalse);
