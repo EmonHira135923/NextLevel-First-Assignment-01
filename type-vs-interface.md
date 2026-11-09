@@ -34,7 +34,13 @@ const user: Person = {
 
 ## Key Difference
 
-An `interface` can be extended with `extends` and merged when declared twice. A `type` alias cannot be merged, but it can represent unions and tuples, which an interface cannot.
+| Type Alias | Interface |
+|---|---|
+| Uses the `type` keyword. | Uses the `interface` keyword. |
+| Can describe objects and other types. | Mainly describes objects. |
+| Can make union types. | Cannot make union types directly. |
+| Combines types with `&`. | Extends other interfaces with `extends`. |
+| Cannot be declared twice. | Can be merged when declared twice. |
 
 ## Conclusion
 
