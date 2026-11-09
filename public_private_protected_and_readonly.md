@@ -64,24 +64,6 @@ emon.name = "Hira"; // allowed
 emon.id = 102;      // Error: 'id' is read-only
 ```
 
-## Key Difference
-
-Public:
-1. `public` keyword.
-2. Allows access to the value from anywhere.
-
-Private:
-1. `private` keyword.
-2. Allows access to the value only inside its own class.
-
-Protected:
-1. `protected` keyword.
-2. Allows access to the value inside its own class and child classes.
-
-Readonly:
-1. `readonly` keyword.
-2. The value can be set once, in the constructor, and cannot be changed after that.
-
 ## Conclusion
 
 Access modifiers help us protect the data inside a class and decide how it can be used. `public` members are open to everyone, `private` members stay inside the class, and `protected` members can also be used by child classes. `readonly` makes sure a value cannot be changed after it is set. As a simple rule, keep members `private` by default and open them only when needed. Using access modifiers correctly makes your classes safer, cleaner, and easier to maintain.

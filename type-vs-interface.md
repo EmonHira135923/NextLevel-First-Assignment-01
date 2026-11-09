@@ -44,4 +44,4 @@ const user: Person = {
 
 ## Conclusion
 
-Both `type` aliases and `interface` help us describe data in TypeScript, and for simple objects they work almost the same way. The main difference is flexibility: a `type` alias can represent unions, tuples, and intersections, while an `interface` is better for object shapes, class contracts, and structures that may be extended or merged later. As a simple rule, use `interface` for objects and `type` for everything else. Choosing the right one makes your code cleaner, easier to read, and easier to maintain.
+Both `type` aliases and `interface` describe data in TypeScript. Use `interface` for object shapes and class contracts, and use `type` for unions, tuples, and intersections. Choosing the right one keeps your code clean and easy to maintain.

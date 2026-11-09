@@ -18,7 +18,7 @@ const processInput = (a:processInputType):processInputType => {
 type Coordinatetype = readonly [number,number,string];
 
 const formatCoordinate = (a:Coordinatetype) : string => {
- return `Location: ${a[2].trim()} (${a[0]}, ${a[1]})`;   
+ return `Location: ${a[2]} (${a[0]}, ${a[1]})`;   
 }
 
 const concatenateArrays = <T>(...arrays:T[][]) :T[] => {
@@ -55,12 +55,6 @@ interface User {
   role: string;
 }
 
-const users: User[] = [
-  { id: 1, name: "Rakib", role: "Admin" },
-  { id: 2, name: "Sadia", role: "Editor" },
-  { id: 3, name: "Tariq", role: "Subscriber" },
-];
-
 const pluckValues = <T,K extends keyof T>(
     items:T[],
     key:K
@@ -90,7 +84,7 @@ class Manager extends Employee {
 }
 
 const validateAgeAsync = async(age:number):Promise<string> => {
-    return new Promise ((resolve,reject)=>{
+    return new Promise<string>((resolve,reject)=>{
         if(age>=18){
             setTimeout(()=>{
                 resolve(`Access Granted`);
