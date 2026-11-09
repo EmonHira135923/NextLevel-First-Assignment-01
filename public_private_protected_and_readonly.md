@@ -14,7 +14,8 @@ class Student {
 }
 
 const emon = new Student("Emon Hossain Hira", 23);
-console.log(emon.name); // allowed
+emon.name; // allowed
+emon.age; // allowed
 ```
 
 ## Private
@@ -40,8 +41,8 @@ class Person {
 }
 
 class Student extends Person {
-  introduce() {
-    return `I am ${this.name}`; // allowed in child class
+  constructor(name: string) {
+    super(name);
   }
 }
 
@@ -68,22 +69,18 @@ emon.id = 102;      // Error: 'id' is read-only
 Public:
 1. `public` keyword.
 2. Allows access to the value from anywhere.
-3. It is the default modifier.
 
 Private:
 1. `private` keyword.
 2. Allows access to the value only inside its own class.
-3. Use it to hide important data from outside code.
 
 Protected:
 1. `protected` keyword.
 2. Allows access to the value inside its own class and child classes.
-3. Use it when child classes need the data but outside code should not.
 
 Readonly:
 1. `readonly` keyword.
 2. The value can be set once, in the constructor, and cannot be changed after that.
-3. Use it for values that must never change, like an `id`.
 
 ## Conclusion
 
